@@ -1,0 +1,128 @@
+/* ----------------------- */
+/* RESET + VARIABLES */
+/* ----------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #ffffff;
+    --text-light: #f2f2f2;
+    --pink: #FF6565;
+    --max-width: 1000px;
+}
+
+/* ----------------------- */
+/* GLOBAL */
+/* ----------------------- */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+/* ----------------------- */
+/* HERO HEADER */
+/* ----------------------- */
+
+.hero {
+    background-image: url("images/headphones_hero_1.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0 120px;
+}
+
+.hero-container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* ----------------------- */
+/* NAVIGATION */
+/* ----------------------- */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+/* MOBILE MENU ICON */
+.mobile-menu {
+    display: none;
+}
+
+/* ----------------------- */
+/* HERO CONTENT */
+/* ----------------------- */
+
+.hero-content {
+    text-align: center;
+    margin-top: 160px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: var(--pink);
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* ----------------------- */
+/* MOBILE RESPONSIVE */
+/* ----------------------- */
+
+@media screen and (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+}
