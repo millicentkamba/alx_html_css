@@ -1,0 +1,156 @@
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Source Sans Pro",sans-serif;color:#222;}
+
+/* VARIABLES */
+:root{
+    --primary:#FF6565;
+    --max-width:1000px;
+    --pentagon-size:150px;
+}
+
+/* GENERAL */
+.container{max-width:var(--max-width);margin:0 auto;padding:0 20px;}
+.btn{
+    background:var(--primary);color:#fff;padding:12px 28px;border-radius:30px;
+    text-decoration:none;display:inline-block;transition:.2s;
+}
+.btn:hover{opacity:.9;}
+
+/* HERO */
+.hero{
+    background:#071629;color:white;padding:40px 20px 140px;
+}
+.nav{display:flex;justify-content:space-between;align-items:center;}
+.logo{height:40px;}
+
+.nav-links{display:flex;gap:30px;list-style:none;}
+.nav-links a{color:white;text-decoration:none;}
+.nav-links a:hover{color:var(--primary);}
+
+.mobile-menu{display:none;cursor:pointer;}
+.mobile-menu img{width:30px;}
+
+/* MOBILE NAV DROPDOWN */
+.mobile-nav{
+    display:none;
+    list-style:none;
+    text-align:center;
+    background:#142233;
+    padding:20px 0;
+    animation: dropdown .3s ease forwards;
+}
+.mobile-nav a{
+    color:white;text-decoration:none;font-size:20px;
+}
+.mobile-nav li{padding:15px 0;}
+.mobile-nav a:hover{color:var(--primary);}
+
+/* DROPDOWN ANIMATION */
+@keyframes dropdown{
+    from{opacity:0;transform:translateY(-10px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* HERO CONTENT */
+.hero-content{text-align:center;margin-top:100px;}
+.hero-content h1{font-size:44px;margin-bottom:10px;}
+.hero-content p{font-size:20px;margin-bottom:30px;}
+
+/* ==========================
+   WHAT WE DO
+========================== */
+.what-we-do{text-align:center;margin:70px 0;}
+.section-description{max-width:700px;margin:0 auto 40px;line-height:1.5;}
+
+.services{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;
+}
+.service-item{
+    flex:1;min-width:220px;max-width:240px;padding:20px;
+    transition:.3s ease;cursor:pointer;
+    border-radius:10px;
+}
+.service-item:hover{
+    transform:scale(1.1) translateY(-5px);
+    background:rgba(255,101,101,.08);
+}
+
+/* ICONS */
+@font-face{
+    font-family:'holberton_school-icon';
+    src:url('holberton_school-icon/fonts/holberton_school-icon.woff2') format('woff2'),
+        url('holberton_school-icon/fonts/holberton_school-icon.woff') format('woff'),
+        url('holberton_school-icon/fonts/holberton_school-icon.ttf') format('truetype');
+}
+[class^="holberton_school-icon-"]{
+    font-family:'holberton_school-icon';
+    font-size:70px;color:var(--primary);display:block;margin-bottom:10px;
+}
+
+/* ==========================
+   OUR RESULTS
+========================== */
+.our-results{text-align:center;padding:60px 0;}
+
+.results-grid{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-top:40px;
+}
+.result-item{flex:1;min-width:200px;cursor:pointer;}
+
+/* PENTAGON SHAPE */
+.pentagon{
+    --s:var(--pentagon-size);
+    width:var(--s);height:var(--s);
+    margin:0 auto 15px;display:grid;place-items:center;position:relative;
+    clip-path:polygon(50% 0%,95% 35%,78% 100%,22% 100%,5% 35%);
+    background:linear-gradient(180deg,rgba(255,101,101,0.18),rgba(255,101,101,0.06));
+    transition:.3s ease;
+}
+.result-item:hover .pentagon{
+    transform:translateY(-10px) scale(1.05);
+}
+
+.pentagon-label{font-size:28px;font-weight:bold;color:var(--primary);}
+
+/* ==========================
+   CONTACT
+========================== */
+.contact{text-align:center;margin:80px 0;}
+.contact-form{
+    max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:20px;
+}
+.contact-form input,.contact-form textarea{
+    padding:12px;font-size:16px;border:1px solid #ccc;border-radius:6px;
+}
+.contact-form textarea{height:120px;}
+
+/* ==========================
+   FOOTER
+========================== */
+.footer{
+    background:#071629;color:white;text-align:center;padding:60px 0;
+}
+.footer-top{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+}
+.footer-logo{height:40px;}
+.footer-socials img{width:28px;margin-left:15px;}
+.footer-text{margin-top:30px;opacity:.7;}
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+@media(max-width:480px){
+
+    .nav-links{display:none;}
+    .mobile-menu{display:block;}
+
+    .services,.results-grid{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    :root{--pentagon-size:120px;}
+
+}

@@ -1,0 +1,252 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    color: #333;
+}
+
+:root {
+    --primary: #FF6565;
+    --max-width: 1000px;
+}
+
+/* --------------------------
+   HEADER / HERO
+--------------------------- */
+
+.hero {
+    background: url("images/headphones_hero_1.jpg") center/cover no-repeat;
+    color: white;
+    padding: 40px 20px 120px;
+}
+
+.hero-container { max-width: var(--max-width); margin: 0 auto; }
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a { color: white; text-decoration: none; }
+.nav-links a:hover { color: var(--primary); }
+
+.mobile-menu { display: none; }
+
+.hero-content { text-align: center; margin-top: 120px; }
+.hero-content h1 { font-size: 48px; }
+.hero-content p { font-size: 20px; margin: 20px 0 40px; }
+
+.btn {
+    padding: 15px 30px;
+    background: var(--primary);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn:hover { opacity: 0.9; transform: scale(1.05); }
+
+/* --------------------------
+   WHAT WE DO
+--------------------------- */
+
+.what-we-do {
+    max-width: var(--max-width);
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.what-we-do h2 { font-size: 32px; margin-bottom: 20px; }
+.section-description {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 18px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.service-item {
+    text-align: center;
+    max-width: 250px;
+}
+
+/* Icon font */
+@font-face {
+    font-family: 'holberton_school-icon';
+    src: url('holberton_school-icon/fonts/holberton_school-icon.ttf') format('truetype'),
+         url('holberton_school-icon/fonts/holberton_school-icon.woff') format('woff'),
+         url('holberton_school-icon/fonts/holberton_school-icon.woff2') format('woff2');
+}
+
+[class^="holberton_school-icon-"],
+[class*=" holberton_school-icon-"] {
+    font-family: 'holberton_school-icon';
+    font-size: 80px;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* --------------------------
+   OUR RESULTS
+--------------------------- */
+
+.our-results { margin-top: 80px; }
+
+.results-overlay {
+    background: url("images/headphones_hero_2.jpg") center/cover no-repeat;
+    padding: 80px 20px;
+    color: white;
+}
+
+.results-overlay .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.results-grid {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.result-item {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.bubble {
+    width: 150px;
+    height: 150px;
+    border: 4px solid white;
+    border-radius: 50%;
+    font-size: 32px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+/* --------------------------
+   CONTACT
+--------------------------- */
+
+.contact {
+    max-width: var(--max-width);
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.contact h2 { font-size: 32px; margin-bottom: 40px; }
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(255, 101, 101, 0.5);
+}
+
+.contact-form textarea { min-height: 120px; resize: vertical; }
+
+/* --------------------------
+   FOOTER (TASK 5)
+--------------------------- */
+
+.footer {
+    background: #071629;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    height: 40px;
+}
+
+.footer-socials a img {
+    width: 30px;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.footer-socials a img:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.footer-text {
+    margin-top: 40px;
+    opacity: 0.7;
+}
+
+/* --------------------------
+   MOBILE
+--------------------------- */
+
+@media (max-width: 480px) {
+
+    .nav-links { display: none; }
+    .mobile-menu { display: block; }
+
+    .services, .results-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bubble {
+        width: 120px;
+        height: 120px;
+        font-size: 26px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

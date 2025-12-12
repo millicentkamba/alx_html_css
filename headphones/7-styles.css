@@ -1,0 +1,105 @@
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Source Sans Pro",sans-serif;color:#222;}
+
+/* VARIABLES */
+:root{
+    --primary:#FF6565;
+    --max-width:1000px;
+    --pentagon-size:150px;
+}
+
+/* GENERAL */
+.container{max-width:var(--max-width);margin:0 auto;padding:0 20px;}
+.btn{
+    background:var(--primary);color:#fff;padding:12px 28px;border-radius:30px;
+    text-decoration:none;display:inline-block;
+}
+.btn:hover{opacity:.9;}
+
+/* HERO */
+.hero{background:#071629;color:#fff;padding:40px 0 120px;}
+.nav{display:flex;justify-content:space-between;align-items:center;}
+.nav-links{display:flex;gap:30px;list-style:none;}
+.nav-links a{color:white;}
+.mobile-menu{display:none;}
+
+.hero-content{text-align:center;margin-top:80px;}
+.hero-content h1{font-size:42px;margin-bottom:12px;}
+.hero-content p{font-size:18px;margin-bottom:20px;}
+
+/* WHAT WE DO */
+.what-we-do{text-align:center;margin:70px 0;}
+.section-description{max-width:700px;margin:0 auto 40px;line-height:1.5;}
+
+.services{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;
+}
+.service-item{
+    flex:1;min-width:220px;max-width:240px;padding:18px 0;
+    transition:.3s ease;cursor:pointer;
+}
+
+/* ANIMATION: hover grow + slight tilt */
+.service-item:hover{
+    transform:scale(1.08) rotate(1deg);
+    opacity:.95;
+}
+
+/* ICON FONT */
+@font-face{
+    font-family:'holberton_school-icon';
+    src:url('holberton_school-icon/fonts/holberton_school-icon.woff2') format('woff2'),
+        url('holberton_school-icon/fonts/holberton_school-icon.woff') format('woff'),
+        url('holberton_school-icon/fonts/holberton_school-icon.ttf') format('truetype');
+}
+[class^="holberton_school-icon-"],[class*=" holberton_school-icon-"]{
+    font-family:'holberton_school-icon';
+    font-size:70px;color:var(--primary);display:block;margin-bottom:10px;
+}
+
+/* OUR RESULTS */
+.our-results{text-align:center;padding:50px 0;}
+.results-grid{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-top:30px;
+}
+.result-item{flex:1;min-width:200px;cursor:pointer;}
+
+/* PENTAGON SHAPE */
+.pentagon{
+    --s:var(--pentagon-size);
+    width:var(--s);height:var(--s);margin:0 auto 15px;
+    display:grid;place-items:center;position:relative;
+    clip-path:polygon(50% 0%,95% 35%,78% 100%,22% 100%,5% 35%);
+    background:linear-gradient(180deg,rgba(255,101,101,.18),rgba(255,101,101,.06));
+    box-shadow:0 0 0 4px rgba(255,255,255,.08) inset,0 2px 10px rgba(0,0,0,.08);
+    transition:.35s ease;
+}
+
+/* ANIMATION: bounce up on hover */
+.result-item:hover .pentagon{
+    transform:translateY(-10px) scale(1.06);
+}
+
+/* label */
+.pentagon-label{font-size:28px;font-weight:700;color:var(--primary);}
+
+/* CONTACT */
+.contact{text-align:center;margin:70px 0;}
+.contact-form{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:15px;}
+.contact-form input,.contact-form textarea{
+    padding:12px;border:1px solid #ccc;border-radius:6px;font-size:15px;
+}
+
+/* FOOTER */
+.footer{background:#071629;color:#fff;padding:60px 0;text-align:center;}
+.footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.footer-socials img{width:28px;margin-left:10px;}
+
+/* MOBILE */
+@media(max-width:480px){
+    .nav-links{display:none;}
+    .mobile-menu{display:block;}
+    .services,.results-grid{flex-direction:column;align-items:center;}
+    :root{--pentagon-size:120px;}
+}
